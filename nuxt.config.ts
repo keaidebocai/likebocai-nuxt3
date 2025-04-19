@@ -10,4 +10,7 @@ export default defineNuxtConfig({
   css: [
     '@/assets/scss/global.scss',// 去除浏览器默认样式
   ],
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+  },
 })
