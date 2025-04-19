@@ -7,4 +7,7 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',// pinia持久化的可配置性与再水合插件
     '@ant-design-vue/nuxt',// ant-design-vue ui
   ],
+  css: [
+    '@/assets/scss/global.scss',// 去除浏览器默认样式
+  ],
 })
