@@ -20,7 +20,7 @@ const onPanelChange = (value: Dayjs, mode: string) => {
 <template>
   <div>
   <a-button @click="handleMessage"> button </a-button>
-  <div style="width: 640px;background-color: #000;">我是谁？</div>
+  <div style="width: 100%;background-color: #000;">我是谁？</div>
   <a-tooltip :title="days.format('YYYY-MM-DD HH:mm:ss')">
       <span>{{ days.fromNow() }}</span>
   </a-tooltip>
@@ -29,7 +29,7 @@ const onPanelChange = (value: Dayjs, mode: string) => {
     <a-calendar v-model:value="value" :fullscreen="false" @panelChange="onPanelChange" />
   </div>
     <h1>首页</h1>
-    <NuxtLink to="/test">测试页面</NuxtLink>
+    <NuxtLink to="/pc/test">测试页面</NuxtLink>
   </div>
 </template>
 
