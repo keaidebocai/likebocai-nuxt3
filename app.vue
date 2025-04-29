@@ -1,39 +1,24 @@
 <script setup lang="ts">
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
-
-const token = reactive({
-  colorPrimary: '#00ff66',
-  colorBgBase: '#fff',
-  fontSize: 16,
-  colorTextBase: '#1677ff'
-})
-
-
-const changeColor = () => {
-  if (token.colorPrimary == '#00ff66') {
-    token.colorPrimary = '#ffdd99'
-    message.info('#ffdd99')
-    return
-  }
-  if (token.colorPrimary == '#ffdd99') {
-    token.colorPrimary = '#00ff66'
-    message.info('#00ff66')
-    return
-  }
+const route = useRoute();
+const layoutName = ref();
+if(route.fullPath.includes('mobile')) {
+  console.log(route.fullPath)
+  layoutName.value = 'mobile';
+} else {
+  console.log(route.fullPath)
+  layoutName.value = 'pc';
 }
-
 
 </script>
 <template>
   <div>
     <aConfigProvider
-      :theme="{
-        token: token
-      }" 
       :locale="zhCN"
     >
-    <NuxtPage />
-      <aButton @click="changeColor">变色！</aButton>
+      <NuxtLayout :name="layoutName">
+        <NuxtPage />
+      </NuxtLayout>
     </aConfigProvider>
   </div>
 </template>
