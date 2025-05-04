@@ -17,7 +17,7 @@ if(route.fullPath.includes('mobile')) {
 
 <template>
   <div>
-    <h1>{{ error.statusCode }}</h1>
+    <h1>{{ props.error?.statusCode }}</h1>
     <NuxtLink :to="`/${layoutName}`">返回首页</NuxtLink>
   </div>
 </template>

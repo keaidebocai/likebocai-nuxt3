@@ -5,6 +5,7 @@ const handleMessage = () => {
 import dayjs, { type Dayjs } from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/zh-cn';
+import { ClientOnly } from '#components';
 dayjs.locale('zh-cn');
 dayjs.extend(relativeTime);
 const days = dayjs('2025-04-19 18:49:56');
@@ -21,16 +22,24 @@ const onPanelChange = (value: Dayjs, mode: string) => {
   <div>
   <a-button @click="handleMessage"> button </a-button>
   <div style="width: 100%;background-color: #000;">我是谁？</div>
-  <a-tooltip :title="days.format('YYYY-MM-DD HH:mm:ss')">
-      <span>{{ days.fromNow() }}</span>
-  </a-tooltip>
   <br/>
-  <div :style="{ width: '300px', border: '1px solid #d9d9d9', borderRadius: '4px' }">
-    <a-calendar v-model:value="value" :fullscreen="false" @panelChange="onPanelChange" />
-  </div>
+  <ClientOnly>
+    <a-tooltip :title="days.format('YYYY-MM-DD HH:mm:ss')">
+      <span>{{ days.fromNow() }}</span>
+    </a-tooltip>
+    <div class="likebocai-calendar">
+      <a-calendar :value="value" :fullscreen="false"/>
+    </div>
+  </ClientOnly>
     <h1>首页</h1>
     <NuxtLink to="/pc/test">测试页面</NuxtLink>
   </div>
 </template>
 
-<!-- <style scoped lang="scss"></style> -->
+<style scoped lang="scss">
+.likebocai-calendar {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
+</style>
