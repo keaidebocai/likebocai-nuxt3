@@ -23,7 +23,7 @@ const onPanelChange = (value: Dayjs, mode: string) => {
   <div style="width: 100%;background-color: #000;">我是谁？</div>
 
   <br/>
-  <ClientOnly fallback-tag="span" fallback="正在加载……">
+  <ClientOnly fallback-tag="span" fallback="正在加载……" v-for="k in 10">
     <a-tooltip :title="days.format('YYYY-MM-DD HH:mm:ss')">
       <span>{{ days.fromNow() }}</span>
     </a-tooltip>

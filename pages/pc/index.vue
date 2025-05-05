@@ -5,7 +5,6 @@ const handleMessage = () => {
 import dayjs, { type Dayjs } from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/zh-cn';
-import { ClientOnly } from '#components';
 dayjs.locale('zh-cn');
 dayjs.extend(relativeTime);
 const days = dayjs('2025-04-19 18:49:56');

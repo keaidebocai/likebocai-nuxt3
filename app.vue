@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
-const route = useRoute();
 const layoutName = ref();
-if(route.fullPath.includes('mobile')) {
-  console.log(route.fullPath)
+const url = useRequestURL();
+if (url.pathname.includes('mobile')) {
   layoutName.value = 'mobile';
 } else {
-  console.log(route.fullPath)
   layoutName.value = 'pc';
 }
 

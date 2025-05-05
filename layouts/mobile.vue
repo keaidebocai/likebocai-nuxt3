@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    
+
 </script>
 
 <template>
@@ -16,15 +16,13 @@
 <style scoped lang="scss">
 .likebocai-mobile-box {
     min-width: 350px;
-    height: 100vh;
     background-color: antiquewhite;
+    position: relative;
     .likebocai-mobile-view {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 5px;
-        padding-right: 5px;
-        min-height: calc(100% - 100px);
+        padding: 55px 5px 70px 5px;
     }
 }
 </style>
